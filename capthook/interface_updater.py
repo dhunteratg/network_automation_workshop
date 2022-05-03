@@ -23,7 +23,7 @@ def main():
         "auth_password": "admin",
         "auth_strict_key": False,
         "platform": "arista_eos"
-        #"transport": "paramiko"
+        "transport": "paramiko"
     }
 
     conn = Scrapli(**device)
