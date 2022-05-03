@@ -1,0 +1,7 @@
+---
+- name: "some play blah"
+  hosts: all
+  tasks:
+    - name: "a debug thing!"
+      debug:
+        msg: "tacocat was hereeeee"

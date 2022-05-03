@@ -1,0 +1,27 @@
+---
+all:
+  children:
+    leafs:
+      hosts:
+        leaf1:
+        leaf2:
+        leaf3:
+    spines:
+      hosts:
+        spine1:
+    eos_devices:
+      hosts:
+        spine1:
+        leaf1:
+        leaf2:
+      vars:
+        ansible_network_os: arista.eos.eos
+    nxos_devices:
+      hosts:
+        leaf3:
+      vars:
+        ansible_network_os: cisco.nxos.nxos
+  vars:
+    ansible_user: admin
+    ansible_password: admin
+    ansible_connection: network_cli

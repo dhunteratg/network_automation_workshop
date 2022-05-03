@@ -1,0 +1,23 @@
+---
+- name: "some play blah"
+  hosts: eos_devices
+  gather_facts: False
+  tasks:
+#    - name: "gather eos facts"
+#      arista.eos.eos_facts:
+#    - name: print facts hopefully
+#      debug:
+#        var: ansible_facts
+    - name: "run show version"
+      arista.eos.eos_command:
+        commands: show version
+      register: shown_version
+    - name: "display version"
+      debug:
+        var: shown_version
+    - name: "nifty debug message"
+      debug:
+        msg: "tacocat \n{{ shown_version['stdout'][0].split('MAC address: ')[1].split()[0] }}"
+    - name: "regex version"
+      debug:
+        msg: "tacocat \n{{ shown_version['stdout'][0] | regex_search('\\w+\\.\\w+\\.\\w+') }}"
