@@ -22,7 +22,7 @@ def main():
         "auth_username": "admin",
         "auth_password": "admin",
         "auth_strict_key": False,
-        "platform": "arista_eos"
+        "platform": "arista_eos",
         "transport": "paramiko"
     }
 
