@@ -39,7 +39,7 @@ def main():
         "platform": "arista_eos",
         "transport": "paramiko"
     }
-    with Scrapli(host="student-davidh.us-west1-a", port=NAT_MAP[device_changed], auth_username="admin", auth_password="admin" auth_strict_key=False, platform=PLATFORM_MAP[device_changed], transport="paramiko") as conn:
+    with Scrapli(host="student-davidh.us-west1-a", port=NAT_MAP[device_changed], auth_username="admin", auth_password="admin", auth_strict_key=False, platform=PLATFORM_MAP[device_changed], transport="paramiko") as conn:
         configs = ['interface ' + intf_changed, 'description ' + new_descr]
         response = conn.send_configs(configs)
 
