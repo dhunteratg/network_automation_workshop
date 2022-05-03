@@ -1,1 +1,8 @@
-echo "hello, jenkins"
+node('jenkins-python') {
+    stage('build') {
+        container('python') {
+            checkout scm
+            sh 'python capthook/buildme.py'
+        }
+    }
+}
