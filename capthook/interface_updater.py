@@ -15,10 +15,10 @@ PLATFORM_MAP = {
 }
 
 NAT_MAP = {
-    "leaf1": "2221",
-    "leaf2": "2222",
-    "leaf3": "2223",
-    "spine1": "2211",
+    "leaf1": 2221,
+    "leaf2": 2222,
+    "leaf3": 2223,
+    "spine1": 2211,
 }
 
 
