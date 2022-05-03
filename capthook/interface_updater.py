@@ -1,10 +1,15 @@
 import json
 from scrapli import Scrapli
+import os
+
+payload = os.environ["PAYLOAD"]
 
 def main():
-    print("hi")
-    with open("webhook_payload.json", "r") as f:
-        netbox_payload = json.load(f)
+    #print("hi")
+    #with open("webhook_payload.json", "r") as f:
+    #    netbox_payload = json.load(f)
+
+    netbox_payload = json.loads(payload)
 
     device_changed = netbox_payload["data"]["device"]["name"]
     intf_changed = netbox_payload["data"]["name"]
